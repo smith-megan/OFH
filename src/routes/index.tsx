@@ -18,7 +18,10 @@ import page6 from "../assets/ppt images/6.jpg"
 import "../App.css"
 // import Contact from "../routes/Contact"
 
-import { createFileRoute, Link } from "@tanstack/react-router"
+import { createFileRoute, 
+  // Link 
+
+} from "@tanstack/react-router"
 
 export const Route = createFileRoute("/")({
   component: Index,
