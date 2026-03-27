@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
-import flower from "../assets/images/flwr.jpg"
+// import flower from "../assets/images/flwr.jpg"
+import photoclip from "../assets/ppt images/clip.jpg"
 
 import { createFileRoute } from "@tanstack/react-router"
 
@@ -48,10 +49,10 @@ function Contact() {
         id="contact"
       >
         <img
-          src={flower}
-          className="col-span-1 row-start-2 sm:row-start-1 h-20 sm:h-full w-full object-cover object-bottom"
+          src={photoclip}
+          className="col-span-1 row-start-2 sm:row-start-1 h-20 sm:h-full object-cover object-bottom"
         />
-        <div className="bg-[#583F25] h-full p-8 col-span-2 justify-center grid gap-4 items-center">
+        <div className="bg-[#75020f] h-full p-8 col-span-2 justify-center grid gap-4 items-center">
           <h1 className="text-white">Contact</h1>
           <form
             className="w-full grid gap-1 p-12 bg-white items-center"

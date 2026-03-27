@@ -1,6 +1,6 @@
 // import { useEffect, useRef } from "react"
 // import mainlogo from "../assets/images/Mainlogo.png"
-import page from "../assets/ppt images/1.jpg"
+// import page from "../assets/ppt images/1.jpg"
 import page5 from "../assets/ppt images/5.jpg"
 import page6 from "../assets/ppt images/6.jpg"
 
@@ -14,9 +14,9 @@ import page6 from "../assets/ppt images/6.jpg"
 // import rightImage from "../assets/right.png"
 // import leftquote from "../assets/leftquote.png"
 // import rightquote from "../assets/rightquote.png"
-// import video from "../assets/video/sm.mp4"
+import video from "../assets/video/sm.mp4"
 import "../App.css"
-// import Contact from "../routes/Contact"
+import Contact from "../routes/Contact"
 
 import { createFileRoute, 
   // Link 
@@ -40,25 +40,25 @@ function Index() {
   return (
     <>
       <div
-        // className="grid md:grid-cols-2 bg-[#f4f0e2] place-content-center place-items-center p-5"
-        // id="intro"
+        className="grid md:grid-cols-1 bg-black place-content-center place-items-center p-7"
+        id="intro"
       >
-        {/* <img
-          className="align-middle justify-self-center"
-          src={mainlogo}
-          alt="LifeTheater Logo"
-        /> */}
-        {/* <video
-          className="align-middle justify-self-center place-content-center p-2 rounded-3xl"
+        <video
+          className="align-middle justify-self-center place-content-center p-2 w-4/5"
           controls
         >
           <source
             className="align-middle justify-self-center"
             src={video}
             type="video/mp4"
-          /> */}
-        {/* </video> */}
-        <img className="aligh-middle justify-self-center" src={page}/>
+          />
+        </video>
+        <div className="grid md:grid-cols-3 place-content-center place-items-center text-white bg-[#75020f] w-4/5 p-5">
+        <p className="text-white text-3xl">OFH is...</p>
+    <p>smaller info text. This is a great spot for introducing the main theme or largest takeaway</p>
+    <button className="rounded-none w-4/5">Contact</button>
+        </div>
+        {/* <img className="aligh-middle justify-self-center" src={page}/> */}
         {/* <img
           className="align-middle justify-self-center"
           src={videopic}
@@ -66,10 +66,10 @@ function Index() {
         /> */}
       </div>
       <div>
-        <img className="aligh-middle justify-self-center" src={page5}/>
+        <img className="aligh-middle justify-self-center w-4/5" src={page5}/>
       </div>
       <div>
-        <img className="aligh-middle justify-self-center" src={page6}/>
+        <img className="aligh-middle justify-self-center w-4/5 pt-10 pb-10" src={page6}/>
       </div>
       
           {/* <div>
@@ -120,10 +120,10 @@ function Index() {
               <h2 className="font-special text-xl">-Oprah Winfrey</h2>
             </div>
           </div> */}
-      {/* <div id="Contact">
+      <div id="Contact" className="grid md:grid-cols-1 bg-black place-content-center place-items-center p-7">
         <Contact />
-      </div> */}
-      <div className="bg-[#e2ddcc] h-10"></div>
+      </div>
+      <div className="bg-black h-10"></div>
     </>
   )
 }
