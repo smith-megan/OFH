@@ -9,24 +9,36 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PlanningRouteImport } from './routes/planning'
-import { Route as PackagesRouteImport } from './routes/Packages'
+import { Route as TimelineRouteImport } from './routes/Timeline'
+import { Route as NewsletterRouteImport } from './routes/Newsletter'
+import { Route as DonateRouteImport } from './routes/Donate'
 import { Route as ContactRouteImport } from './routes/Contact'
+import { Route as ApproachRouteImport } from './routes/Approach'
 import { Route as IndexRouteImport } from './routes/index'
 
-const PlanningRoute = PlanningRouteImport.update({
-  id: '/planning',
-  path: '/planning',
+const TimelineRoute = TimelineRouteImport.update({
+  id: '/Timeline',
+  path: '/Timeline',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PackagesRoute = PackagesRouteImport.update({
-  id: '/Packages',
-  path: '/Packages',
+const NewsletterRoute = NewsletterRouteImport.update({
+  id: '/Newsletter',
+  path: '/Newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DonateRoute = DonateRouteImport.update({
+  id: '/Donate',
+  path: '/Donate',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/Contact',
   path: '/Contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApproachRoute = ApproachRouteImport.update({
+  id: '/Approach',
+  path: '/Approach',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,52 +49,80 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/Approach': typeof ApproachRoute
   '/Contact': typeof ContactRoute
-  '/Packages': typeof PackagesRoute
-  '/planning': typeof PlanningRoute
+  '/Donate': typeof DonateRoute
+  '/Newsletter': typeof NewsletterRoute
+  '/Timeline': typeof TimelineRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/Approach': typeof ApproachRoute
   '/Contact': typeof ContactRoute
-  '/Packages': typeof PackagesRoute
-  '/planning': typeof PlanningRoute
+  '/Donate': typeof DonateRoute
+  '/Newsletter': typeof NewsletterRoute
+  '/Timeline': typeof TimelineRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/Approach': typeof ApproachRoute
   '/Contact': typeof ContactRoute
-  '/Packages': typeof PackagesRoute
-  '/planning': typeof PlanningRoute
+  '/Donate': typeof DonateRoute
+  '/Newsletter': typeof NewsletterRoute
+  '/Timeline': typeof TimelineRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/Contact' | '/Packages' | '/planning'
+  fullPaths:
+    | '/'
+    | '/Approach'
+    | '/Contact'
+    | '/Donate'
+    | '/Newsletter'
+    | '/Timeline'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/Contact' | '/Packages' | '/planning'
-  id: '__root__' | '/' | '/Contact' | '/Packages' | '/planning'
+  to: '/' | '/Approach' | '/Contact' | '/Donate' | '/Newsletter' | '/Timeline'
+  id:
+    | '__root__'
+    | '/'
+    | '/Approach'
+    | '/Contact'
+    | '/Donate'
+    | '/Newsletter'
+    | '/Timeline'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApproachRoute: typeof ApproachRoute
   ContactRoute: typeof ContactRoute
-  PackagesRoute: typeof PackagesRoute
-  PlanningRoute: typeof PlanningRoute
+  DonateRoute: typeof DonateRoute
+  NewsletterRoute: typeof NewsletterRoute
+  TimelineRoute: typeof TimelineRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/planning': {
-      id: '/planning'
-      path: '/planning'
-      fullPath: '/planning'
-      preLoaderRoute: typeof PlanningRouteImport
+    '/Timeline': {
+      id: '/Timeline'
+      path: '/Timeline'
+      fullPath: '/Timeline'
+      preLoaderRoute: typeof TimelineRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/Packages': {
-      id: '/Packages'
-      path: '/Packages'
-      fullPath: '/Packages'
-      preLoaderRoute: typeof PackagesRouteImport
+    '/Newsletter': {
+      id: '/Newsletter'
+      path: '/Newsletter'
+      fullPath: '/Newsletter'
+      preLoaderRoute: typeof NewsletterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/Donate': {
+      id: '/Donate'
+      path: '/Donate'
+      fullPath: '/Donate'
+      preLoaderRoute: typeof DonateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/Contact': {
@@ -90,6 +130,13 @@ declare module '@tanstack/react-router' {
       path: '/Contact'
       fullPath: '/Contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/Approach': {
+      id: '/Approach'
+      path: '/Approach'
+      fullPath: '/Approach'
+      preLoaderRoute: typeof ApproachRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,9 +151,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApproachRoute: ApproachRoute,
   ContactRoute: ContactRoute,
-  PackagesRoute: PackagesRoute,
-  PlanningRoute: PlanningRoute,
+  DonateRoute: DonateRoute,
+  NewsletterRoute: NewsletterRoute,
+  TimelineRoute: TimelineRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         special: ['"DM Serif Text"', '"sans-serif"'],
+        other: ['"Special Elite"', '"sans-serif"'],
+        dirt: ['"Rubik Dirt"', '"sans-serif"'],
       },
       gridColumn: {
         overlap: "1 / span 7",
